@@ -132,6 +132,14 @@ public class Player extends CreatureBase {
 
         //Inventory
         inventory.tick();
+        
+        if(handler.getKeyManager().addbutt){
+        	
+        	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(Item.woodItem);
+        	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(Item.rockItem);
+        	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(Item.fireRuneItem);
+        	
+        }
 
         //spellgui
         spellGUI.tick();

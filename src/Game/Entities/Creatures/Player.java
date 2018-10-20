@@ -44,6 +44,8 @@ public class Player extends CreatureBase {
     private int FireSpeed = 2;
     private int FireMove = 0;
     private int movexp,moveyp,movexn,moveyn,tempmoveyp,tempmovexn,tempmoveyn,tempmovexp,fy,fx;
+    
+    private final int MAX_HEALTH = 75;
 
     //spells
 
@@ -56,7 +58,7 @@ public class Player extends CreatureBase {
         bounds.y=18*2;
         bounds.width=16*2;
         bounds.height=14*2;
-        health=75;
+        health=MAX_HEALTH;
         attack=2;
 
 
@@ -91,6 +93,12 @@ public class Player extends CreatureBase {
         getInput();
         move();
         handler.getGameCamera().centerOnEntity(this);
+        
+        if(handler.getKeyManager().hbutt){
+
+        	this.health = MAX_HEALTH;
+
+        }
 
         if(!fcactive){
             fcounter++;
@@ -360,4 +368,5 @@ public class Player extends CreatureBase {
     public SpellCastUI getSpellGUI() {
         return spellGUI;
     }
+    
 }

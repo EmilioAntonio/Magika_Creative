@@ -94,6 +94,12 @@ public class Player extends CreatureBase {
         move();
         handler.getGameCamera().centerOnEntity(this);
         
+//        if(handler.getKeyManager().telebutt){
+//
+//        	handler.getWorld();
+//
+//        }
+        
         if(handler.getKeyManager().hbutt){
 
         	this.health = MAX_HEALTH;

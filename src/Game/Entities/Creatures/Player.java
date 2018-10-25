@@ -11,6 +11,7 @@ import Main.Handler;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
+import Worlds.*;
 
 /**
  * Created by Elemental on 1/1/2017.
@@ -38,6 +39,11 @@ public class Player extends CreatureBase {
     private Boolean LaunchedFireBallU=false;
     private Boolean LaunchedFireBallD=false;
     private Boolean attacking=false;
+    
+    //Worlds
+    private int worldIn = 1;
+    CaveWorld cave = new CaveWorld(handler, "res/Maps/caveMap.map",this);
+    World1 start = new World1(handler, "res/Maps/map1.map",this);
 
     private int animWalkingSpeed = 150;
     private int animFireSpeed = 250;
@@ -94,11 +100,22 @@ public class Player extends CreatureBase {
         move();
         handler.getGameCamera().centerOnEntity(this);
         
-//        if(handler.getKeyManager().telebutt){
-//
-//        	handler.getWorld();
-//
-//        }
+        if(handler.getKeyManager().telebutt){
+
+        	if(worldIn == 1){
+        		
+        		handler.setWorld(cave);
+        		worldIn++;
+        		
+        	}
+        	else{
+        		
+        		handler.setWorld(start);
+        		worldIn--;
+        		
+        	}
+
+        }
         
         if(handler.getKeyManager().hbutt){
 

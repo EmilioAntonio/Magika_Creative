@@ -48,7 +48,7 @@ public class KeyManager implements KeyListener {
 		
 		hbutt = keys[KeyEvent.VK_SHIFT];
 		addbutt = keys[KeyEvent.VK_X];
-		telebutt = keys[KeyEvent.VK_TAB];
+		telebutt = keys[KeyEvent.VK_T];
 
 	}
 

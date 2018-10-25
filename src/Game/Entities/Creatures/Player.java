@@ -51,7 +51,7 @@ public class Player extends CreatureBase {
     private int FireMove = 0;
     private int movexp,moveyp,movexn,moveyn,tempmoveyp,tempmovexn,tempmoveyn,tempmovexp,fy,fx;
     
-    private final int MAX_HEALTH = 75;
+    private final int MAX_HEALTH = 100;
 
     //spells
 

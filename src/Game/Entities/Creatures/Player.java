@@ -100,6 +100,7 @@ public class Player extends CreatureBase {
         move();
         handler.getGameCamera().centerOnEntity(this);
         
+        //Hack teleport
         if(handler.getKeyManager().telebutt){
 
         	if(worldIn == 1){
@@ -117,6 +118,7 @@ public class Player extends CreatureBase {
 
         }
         
+        //Hack Regen Health
         if(handler.getKeyManager().hbutt){
 
         	this.health = MAX_HEALTH;

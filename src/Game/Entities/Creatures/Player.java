@@ -51,7 +51,7 @@ public class Player extends CreatureBase {
     private int FireMove = 0;
     private int movexp,moveyp,movexn,moveyn,tempmoveyp,tempmovexn,tempmoveyn,tempmovexp,fy,fx;
     
-    private final int MAX_HEALTH = 100;
+    private final int MAX_HEALTH = 140;
 
     //spells
 
@@ -163,6 +163,9 @@ public class Player extends CreatureBase {
         	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(Item.woodItem);
         	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(Item.rockItem);
         	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(Item.fireRuneItem);
+        	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(Item.keyItem);
+        	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(Item.coinItem);
+        	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(Item.coinItem);
         	
         }
 

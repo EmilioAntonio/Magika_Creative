@@ -77,9 +77,7 @@ public class CoinBlock extends StaticEntity {
 		randint=new Random();
 		RNGR=randint.nextInt(1) + 1;
 		System.out.println(RNGR);
-		for(int i = 0; i < 2; i++){
 			handler.getWorld().getItemManager().addItem(Item.coinItem.createNew((int)x + bounds.x,(int)y + bounds.y,1));
-		}
 
 	}
 }

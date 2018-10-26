@@ -193,6 +193,8 @@ public class OpSkely extends CreatureBase  {
     public void die() {
     	
     	handler.getWorld().getItemManager().addItem(Item.keyItem.createNew((int)x + bounds.x,(int)y + bounds.y,1));
+    	handler.getWorld().getItemManager().addItem(Item.coinItem.createNew((int)x + bounds.x,(int)y + bounds.y,1));
+
 
     }
 }

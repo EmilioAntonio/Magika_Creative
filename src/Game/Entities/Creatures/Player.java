@@ -289,13 +289,13 @@ public class Player extends CreatureBase {
         xMove = 0;
         yMove = 0;
 
-        if(handler.getKeyManager().up &&! attacking)
+        if(handler.getKeyManager().up || handler.getKeyManager().up1 &&! attacking)
             yMove = -speed;
-        if(handler.getKeyManager().down&&! attacking)
+        if(handler.getKeyManager().down || handler.getKeyManager().down1 &&! attacking)
             yMove = speed;
-        if(handler.getKeyManager().left&&! attacking)
+        if(handler.getKeyManager().left || handler.getKeyManager().left1 &&! attacking)
             xMove = -speed;
-        if(handler.getKeyManager().right&&! attacking)
+        if(handler.getKeyManager().right || handler.getKeyManager().right1 &&! attacking)
             xMove = speed;
     }
 

@@ -48,6 +48,7 @@ public class Images {
     
     //Newly added
     public static BufferedImage coin;
+    public static BufferedImage chestcoin;
 
     public Images() {
 
@@ -109,6 +110,7 @@ public class Images {
             Options[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/OptionsP.png"));
             
             coin = ImageIO.read(getClass().getResourceAsStream("/Sheets/CoinBit.png"));
+            chestcoin = ImageIO.read(getClass().getResourceAsStream("/Sheets/chestC.png"));
             
 
             //icon

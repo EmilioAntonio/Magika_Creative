@@ -51,6 +51,17 @@ public class Images {
     public static BufferedImage chestcoin;
     
     public static BufferedImage key;
+    
+    //New Enemies
+    public static BufferedImage[] SkelyOP_right;
+    public static BufferedImage[] SkelyOP_left;
+    public static BufferedImage[] SkelyOP_front;
+    public static BufferedImage[] SkelyOP_back;
+    
+    public static BufferedImage[] SkelyBoss_right;
+    public static BufferedImage[] SkelyBoss_left;
+    public static BufferedImage[] SkelyBoss_front;
+    public static BufferedImage[] SkelyBoss_back;
 
     public Images() {
 
@@ -61,6 +72,9 @@ public class Images {
         SpriteSheet FireBallRightsheet = new SpriteSheet(Images.loadImage("/Sheets/FireBallRight.png"));
         SpriteSheet FireBallUpsheet = new SpriteSheet(Images.loadImage("/Sheets/FireBallUp.png"));
         SpriteSheet FireBallDownsheet = new SpriteSheet(Images.loadImage("/Sheets/FireBallDown.png"));
+        
+        SpriteSheet OpSkely = new SpriteSheet(Images.loadImage("/Sheets/OpSkely.png"));
+        SpriteSheet BossSkely = new SpriteSheet(Images.loadImage("/Sheets/BossSkely.png"));
 
 
 
@@ -75,6 +89,16 @@ public class Images {
         SkelyEnemy_right = new BufferedImage[4];
         SkelyEnemy_front = new BufferedImage[4];
         SkelyEnemy_back = new BufferedImage[4];
+        
+        SkelyOP_left = new BufferedImage[4];
+        SkelyOP_right = new BufferedImage[4];
+        SkelyOP_front = new BufferedImage[4];
+        SkelyOP_back = new BufferedImage[4];
+        
+        SkelyBoss_left = new BufferedImage[4];
+        SkelyBoss_right = new BufferedImage[4];
+        SkelyBoss_front = new BufferedImage[4];
+        SkelyBoss_back = new BufferedImage[4];
 
         butstart = new BufferedImage[3];
         particleSmoke = new BufferedImage[3];
@@ -254,6 +278,26 @@ public class Images {
             SkelyEnemy_back[1]=newsheet.crop(164,227+130,width,height);
             SkelyEnemy_back[2]=newsheet.crop(196,227+130,width,height);
             SkelyEnemy_back[3]=newsheet.crop(228,227+130,28,height);
+            
+            SkelyOP_front[0] = OpSkely.crop(0, 0, width, height);
+            SkelyOP_front[1] = OpSkely.crop(32, 0, width, height);
+            SkelyOP_front[2] = OpSkely.crop(64, 0, width, height);
+            SkelyOP_front[3] = OpSkely.crop(90, 0, width, height);
+            
+            SkelyOP_left[0] = OpSkely.crop(0, 32, width, height);
+            SkelyOP_left[1] = OpSkely.crop(32, 32, width, height);
+            SkelyOP_left[2] = OpSkely.crop(64, 32, width, height);
+            SkelyOP_left[3] = OpSkely.crop(90, 32, width, height);
+            
+            SkelyOP_right[0] = OpSkely.crop(0, 64, width, height);
+            SkelyOP_right[1] = OpSkely.crop(32, 64, width, height);
+            SkelyOP_right[2] = OpSkely.crop(64, 64, width, height);
+            SkelyOP_right[3] = OpSkely.crop(90, 64, width, height);
+            
+            SkelyOP_back[0] = OpSkely.crop(0, 96, width, height);
+            SkelyOP_back[1] = OpSkely.crop(32, 96, width, height);
+            SkelyOP_back[2] = OpSkely.crop(64, 96, width, height);
+            SkelyOP_back[3] = OpSkely.crop(90, 96, width, height);
 
         } catch (IOException e) {
             e.printStackTrace();

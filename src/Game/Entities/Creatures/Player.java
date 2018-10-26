@@ -11,6 +11,9 @@ import Main.Handler;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
+
+import javax.swing.JOptionPane;
+
 import Worlds.*;
 
 /**
@@ -58,6 +61,7 @@ public class Player extends CreatureBase {
 
 
     public Player(Handler handler, float x, float y) {
+    	
         super(handler, x, y, CreatureBase.DEFAULT_CREATURE_WIDTH, CreatureBase.DEFAULT_CREATURE_HEIGHT);
 
         bounds.x=8*2;
@@ -66,8 +70,7 @@ public class Player extends CreatureBase {
         bounds.height=14*2;
         health=MAX_HEALTH;
         attack=4;
-
-
+        
         animDown = new Animation(animWalkingSpeed,Images.player_front);
         animLeft = new Animation(animWalkingSpeed,Images.player_left);
         animRight = new Animation(animWalkingSpeed,Images.player_right);
@@ -165,9 +168,23 @@ public class Player extends CreatureBase {
         	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(Item.fireRuneItem);
         	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(Item.keyItem);
         	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(Item.coinItem);
-        	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(Item.coinItem);
+        	handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(Item.fistItem);
+        	
         	
         }
+        
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_E))
+        {
+        	if(handler.getWorld().getEntityManager().getPlayer().getInventory().containsItem(Item.fistItem))
+        	{
+        		this.attack+=2;
+        		handler.getWorld().getEntityManager().getPlayer().getInventory().removeItem(Item.fistItem);
+        		
+        		System.out.println(attack);
+        	}
+        }
+        
+        //if(handler.getWorld().getEntityManager().getPlayer()
 
         //spellgui
         spellGUI.tick();
@@ -285,6 +302,8 @@ public class Player extends CreatureBase {
     @Override
     public void die(){
         System.out.println("You lose");
+        int gameOver=0;
+        gameOver = JOptionPane.showConfirmDialog(null, "YOU DIED", " GAME OVER", JOptionPane.CLOSED_OPTION);
         State.setState(handler.getGame().menuState);
     }
 

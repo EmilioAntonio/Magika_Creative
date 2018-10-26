@@ -83,16 +83,16 @@ public class Inventory {
 		
 
 		for(int i = 0; i < inventoryItems.size(); i++) {
-			if(i <5) {
+			if(i < 5) {
 				g.drawImage(inventoryItems.get(i).getTexture(), 25+(row*i), 24, inventoryItems.get(i).getWidth(), inventoryItems.get(i).getHeight(), null);
 				g.drawString(String.valueOf(inventoryItems.get(i).getCount()), 25+33+(row*i),25+35);
-			}else if(i <10) {
+			}else if(i < 10) {
 				g.drawImage(inventoryItems.get(i).getTexture(), 25+(row*(i-5)), 24+row, inventoryItems.get(i).getWidth(), inventoryItems.get(i).getHeight(), null);
 				g.drawString(String.valueOf(inventoryItems.get(i).getCount()), 25+33+(row*(i-5)),25+35+row);	
-			}else if(i <15) {
+			}else if(i < 15) {
 				g.drawImage(inventoryItems.get(i).getTexture(), 25+(row*(i-10)), 24+(row*2), inventoryItems.get(i).getWidth(), inventoryItems.get(i).getHeight(), null);
 				g.drawString(String.valueOf(inventoryItems.get(i).getCount()), 25+33+(row*(i-10)),25+35+(row*2));	
-			}else if(i <20) {
+			}else if(i < 20) {
 				g.drawImage(inventoryItems.get(i).getTexture(), 25+(row*(i-15)), 24+(row*3), inventoryItems.get(i).getWidth(), inventoryItems.get(i).getHeight(), null);
 				g.drawString(String.valueOf(inventoryItems.get(i).getCount()), 25+33+(row*(i-15)),25+35+(row*3));	
 			}
@@ -130,5 +130,31 @@ public class Inventory {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+    
+    public boolean containsItem(Item item){    	
+    	
+    	for(Item i : getInventoryItems())
+    	{
+    		if(i.getName().equals(item));
+    			return true;
+       	}
+   		return false;
+   	}
+    
+    public void removeItem(Item item)
+    {
+    	boolean remove = false;
+    	for(Item i : getInventoryItems())
+    	{
+    		i.setCount(i.getCount()-item.getCount());
+    		remove = true;
+       	}
+    	
+    	if(remove)
+    	{
+    		System.out.println("culo");
+    		inventoryItems.remove(item);
+    	}
     }
 }

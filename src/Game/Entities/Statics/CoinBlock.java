@@ -74,10 +74,15 @@ public class CoinBlock extends StaticEntity {
 
 	@Override
 	public void die() {
-		randint=new Random();
-		RNGR=randint.nextInt(1) + 1;
-		System.out.println(RNGR);
-			handler.getWorld().getItemManager().addItem(Item.coinItem.createNew((int)x + bounds.x,(int)y + bounds.y,1));
+		Random random = new Random();
+		int n = random.nextInt(20)+1;
+		for(int i=0; i<n; i++)
+		{
+			int x1 = random.nextInt(51)-25;
+			int y1 = random.nextInt(51)-25;
+			handler.getWorld().getItemManager().addItem(Item.coinItem.createNew((int)x + bounds.x + x1,(int)y + bounds.y + y1,1));
+		}	
+		handler.getWorld().getItemManager().addItem(Item.fistItem.createNew((int)x + bounds.x,(int)y + bounds.y,1));
 
 	}
 }

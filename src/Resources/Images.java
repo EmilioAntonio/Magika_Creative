@@ -49,8 +49,8 @@ public class Images {
     //Newly added
     public static BufferedImage coin;
     public static BufferedImage chestcoin;
-    
     public static BufferedImage key;
+    public static BufferedImage fist;
     
     //New Enemies
     public static BufferedImage[] SkelyOP_right;
@@ -137,8 +137,8 @@ public class Images {
             
             coin = ImageIO.read(getClass().getResourceAsStream("/Sheets/CoinBit.png"));
             chestcoin = ImageIO.read(getClass().getResourceAsStream("/Sheets/chestC.png"));
-            
             key = ImageIO.read(getClass().getResourceAsStream("/Sheets/key.png"));
+            fist = ImageIO.read(getClass().getResourceAsStream("/Sheets/fist.png"));
             
 
             //icon

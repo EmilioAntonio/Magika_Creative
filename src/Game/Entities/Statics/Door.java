@@ -55,9 +55,8 @@ public class Door extends StaticEntity {
 
     @Override
     public void render(Graphics g) {
-        g.drawImage(Images.door,(int)(x-handler.getGameCamera().getxOffset()),(int)(y-handler.getGameCamera().getyOffset()),width,height,null);
-
-        g.setColor(Color.black);
+        //g.drawImage(Images.door,(int)(x-handler.getGameCamera().getxOffset()),(int)(y-handler.getGameCamera().getyOffset()),width,height,null);
+        //g.setColor(Color.black);
         checkForPlayer(g, handler.getWorld().getEntityManager().getPlayer());
     }
 

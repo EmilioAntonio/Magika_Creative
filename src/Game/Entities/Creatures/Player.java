@@ -157,7 +157,6 @@ public class Player extends CreatureBase {
 
         }
 
-
         //Inventory
         inventory.tick();
         
@@ -183,9 +182,8 @@ public class Player extends CreatureBase {
         		System.out.println(attack);
         	}
         }
-        
-        //if(handler.getWorld().getEntityManager().getPlayer()
-
+       
+       
         //spellgui
         spellGUI.tick();
     }

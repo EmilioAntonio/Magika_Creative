@@ -8,6 +8,7 @@ import Resources.Animation;
 import Resources.Images;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -29,6 +30,8 @@ public class Companion extends CreatureBase  {
     private Random randint;
     private int moveCount=0;
     private int direction;
+    
+    private ArrayList<EntityBase> Baddies;
 
     public Companion(Handler handler, float x, float y) {
         super(handler, x, y, CreatureBase.DEFAULT_CREATURE_WIDTH, CreatureBase.DEFAULT_CREATURE_HEIGHT);
@@ -36,8 +39,9 @@ public class Companion extends CreatureBase  {
         bounds.y=18*2;
         bounds.width=16*2;
         bounds.height=14*2;
-        speed=1.5f;
+        speed=2.0f;
         health=100;
+        attack=6;
 
         SkelyCam= new Rectangle();
 
@@ -46,10 +50,10 @@ public class Companion extends CreatureBase  {
         randint = new Random();
         direction = randint.nextInt(4) + 1;
 
-        animDown = new Animation(animWalkingSpeed, Images.SkelyEnemy_front);
-        animLeft = new Animation(animWalkingSpeed,Images.SkelyEnemy_left);
-        animRight = new Animation(animWalkingSpeed,Images.SkelyEnemy_right);
-        animUp = new Animation(animWalkingSpeed,Images.SkelyEnemy_back);
+        animDown = new Animation(animWalkingSpeed, Images.Comp_front);
+        animLeft = new Animation(animWalkingSpeed,Images.Comp_left);
+        animRight = new Animation(animWalkingSpeed,Images.Comp_right);
+        animUp = new Animation(animWalkingSpeed,Images.Comp_back);
 
         Skelyinventory= new Inventory(handler);
     }
@@ -73,7 +77,7 @@ public class Companion extends CreatureBase  {
 
         if(isBeinghurt()){
             healthcounter++;
-            if(healthcounter>=100){
+            if(healthcounter>=120){
                 setBeinghurt(false);
                 System.out.print(isBeinghurt());
             }
@@ -82,8 +86,8 @@ public class Companion extends CreatureBase  {
             healthcounter=0;
         }
 
-
-        Skelyinventory.tick();
+        //What does it do?
+//        Skelyinventory.tick();
 
 
     }
@@ -124,7 +128,7 @@ public class Companion extends CreatureBase  {
             for (EntityBase e : handler.getWorld().getEntityManager().getEntities()) {
                 if (e.equals(this))
                     continue;
-                if (e.getCollisionBounds(0, 0).intersects(ar) && e.equals(handler.getWorld().getEntityManager().getPlayer())) {
+                if (e.getCollisionBounds(0, 0).intersects(ar) && e instanceof SkelyEnemy || e instanceof OpSkely) {
 
                     checkAttacks();
                     return;
@@ -132,7 +136,7 @@ public class Companion extends CreatureBase  {
             }
 
 
-            if (x >= handler.getWorld().getEntityManager().getPlayer().getX() - 8 && x <= handler.getWorld().getEntityManager().getPlayer().getX() + 8) {//nada
+            if (x >= handler.getWorld().getEntityManager().getPlayer().getX() - 8 && x <= handler.getWorld().getEntityManager().getPlayer().getX() + 8 ||) {//nada
 
                 xMove = 0;
             } else if (x < handler.getWorld().getEntityManager().getPlayer().getX()) {//move right
@@ -172,13 +176,15 @@ public class Companion extends CreatureBase  {
                     break;
 
             }
+            
+            
         }
     }
 
 
     @Override
     public void render(Graphics g) {
-        g.drawImage(Images.compR,(int)(x-handler.getGameCamera().getxOffset()),(int)(y-handler.getGameCamera().getyOffset()),width,height,null);
+        g.drawImage(getCurrentAnimationFrame(animDown,animUp,animLeft,animRight,Images.Comp_front,Images.Comp_back,Images.Comp_left,Images.Comp_right), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), width, height, null);
         if(isBeinghurt() && healthcounter<=120){
             g.setColor(Color.white);
             g.drawString("SkelyHealth: " + getHealth(),(int) (x-handler.getGameCamera().getxOffset()),(int) (y-handler.getGameCamera().getyOffset()-20));

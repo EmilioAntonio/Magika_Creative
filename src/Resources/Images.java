@@ -54,8 +54,15 @@ public class Images {
     public static BufferedImage sword;
     
     //New Companion
-    public static BufferedImage compR;
-    public static BufferedImage compL;
+    public static BufferedImage[] Comp_right;
+    public static BufferedImage[] Comp_left;
+    public static BufferedImage[] Comp_front;
+    public static BufferedImage[] Comp_back;
+    
+    public static BufferedImage[] Keep_right;
+    public static BufferedImage[] Keep_left;
+    public static BufferedImage[] Keep_front;
+    public static BufferedImage[] Keep_back;
     
     //New Enemies
     public static BufferedImage[] SkelyOP_right;
@@ -67,12 +74,6 @@ public class Images {
     public static BufferedImage[] SkelyBoss_left;
     public static BufferedImage[] SkelyBoss_front;
     public static BufferedImage[] SkelyBoss_back;
-    
-    //Humanoid
-    public static BufferedImage[] humanoid_right;
-    public static BufferedImage[] humanoid_left;
-    public static BufferedImage[] humanoid_front;
-    public static BufferedImage[] humanoid_back;
 
     public Images() {
 
@@ -86,10 +87,9 @@ public class Images {
         
         SpriteSheet OpSkely = new SpriteSheet(Images.loadImage("/Sheets/OpSkely.png"));
         SpriteSheet BossSkely = new SpriteSheet(Images.loadImage("/Sheets/BossSkely.png"));
-        SpriteSheet HumanoidFront = new SpriteSheet(Images.loadImage("/Sheets/humanoidfront.png"));
-        SpriteSheet HumanoidBack = new SpriteSheet(Images.loadImage("/Sheets/humanoidback.png"));
-        SpriteSheet HumanoidLeft = new SpriteSheet(Images.loadImage("/Sheets/humanoidleft.png"));
-        SpriteSheet HumanoidRight = new SpriteSheet(Images.loadImage("/Sheets/humanoidright.png"));
+        
+        SpriteSheet Keeper = new SpriteSheet(Images.loadImage("/Sheets/Keeper.png"));
+        SpriteSheet Comp = new SpriteSheet(Images.loadImage("/Sheets/CompS.png"));
 
 
         blocks = new BufferedImage[15];
@@ -114,11 +114,16 @@ public class Images {
         SkelyBoss_front = new BufferedImage[4];
         SkelyBoss_back = new BufferedImage[4];
         
-        humanoid_left = new BufferedImage[1];
-        humanoid_right = new BufferedImage[1];
-        humanoid_front = new BufferedImage[1];
-        humanoid_back = new BufferedImage[1];
-
+        Comp_left = new BufferedImage[4];
+        Comp_right = new BufferedImage[4];
+        Comp_front = new BufferedImage[4];
+        Comp_back = new BufferedImage[4];
+        
+        Keep_left = new BufferedImage[4];
+        Keep_right = new BufferedImage[4];
+        Keep_front = new BufferedImage[4];
+        Keep_back = new BufferedImage[4];
+        
         butstart = new BufferedImage[3];
         particleSmoke = new BufferedImage[3];
         items = new BufferedImage[3];
@@ -158,13 +163,6 @@ public class Images {
             key = ImageIO.read(getClass().getResourceAsStream("/Sheets/key.png"));
             fist = ImageIO.read(getClass().getResourceAsStream("/Sheets/fist.png"));
             sword = ImageIO.read(getClass().getResourceAsStream("/Sheets/sword.png"));
-
-            
-            //Companion Images
-            compR = ImageIO.read(getClass().getResourceAsStream("/Sheets/Comp_R.png"));
-            
-            compL = ImageIO.read(getClass().getResourceAsStream("/Sheets/Comp_L.png"));
-            
 
             //icon
             icon = new ImageIcon(runesheet.crop(Rwidth*1,Rheight*0,Rwidth,Rheight));
@@ -324,11 +322,7 @@ public class Images {
             SkelyOP_back[2] = OpSkely.crop(64, 96, width, height);
             SkelyOP_back[3] = OpSkely.crop(90, 96, width, height);
             
-            //Humanoid
-            humanoid_right[0] = HumanoidRight.crop(50, 172, width, height);
-            humanoid_left[0] = HumanoidLeft.crop(60, 170, width, height);
-            humanoid_front[0] = HumanoidFront.crop(95, 174, width, height);
-            humanoid_back[0] = HumanoidBack.crop(140, 170, width, height);
+            
 
         } catch (IOException e) {
             e.printStackTrace();

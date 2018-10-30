@@ -30,8 +30,6 @@ public class Companion extends CreatureBase  {
     private Random randint;
     private int moveCount=0;
     private int direction;
-    
-    private ArrayList<EntityBase> Baddies;
 
     public Companion(Handler handler, float x, float y) {
         super(handler, x, y, CreatureBase.DEFAULT_CREATURE_WIDTH, CreatureBase.DEFAULT_CREATURE_HEIGHT);
@@ -136,7 +134,7 @@ public class Companion extends CreatureBase  {
             }
 
 
-            if (x >= handler.getWorld().getEntityManager().getPlayer().getX() - 8 && x <= handler.getWorld().getEntityManager().getPlayer().getX() + 8 ||) {//nada
+            if (x >= handler.getWorld().getEntityManager().getPlayer().getX() - 8 && x <= handler.getWorld().getEntityManager().getPlayer().getX() + 8) {//nada
 
                 xMove = 0;
             } else if (x < handler.getWorld().getEntityManager().getPlayer().getX()) {//move right

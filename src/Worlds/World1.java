@@ -26,9 +26,9 @@ public class World1 extends BaseWorld{
         entityManager.addEntity(new Rock(handler, 88, 1345));
         entityManager.addEntity(new Tree(handler, 77, 700));
         entityManager.addEntity(new Rock(handler, 700, 83));
-        entityManager.addEntity(new Door(handler, 100, 0,caveWorld));
+//        entityManager.addEntity(new Door(handler, 100, 0,caveWorld));
         entityManager.addEntity(new SkelyEnemy(handler, 1250, 500));
-        entityManager.addEntity(new Companion(handler, 250, 250));
+        
         
         
         entityManager.addEntity(new CoinBlock(handler, 555, 1050));

@@ -92,7 +92,7 @@ public class Images {
         SpriteSheet Comp = new SpriteSheet(Images.loadImage("/Sheets/CompS.png"));
 
 
-        blocks = new BufferedImage[15];
+        blocks = new BufferedImage[18];
 
         player_left = new BufferedImage[4];
         player_right = new BufferedImage[4];
@@ -258,6 +258,9 @@ public class Images {
             blocks[12] = newsheet.crop(0,260,Bwidth,Bheight);//mossyrock
             blocks[13] = newsheet.crop(176,0,Bwidth,Bheight*2);//tree
             blocks[14] = newsheet.crop(174,410,78,74);//rock
+            blocks[15] = newsheet.crop(0,260,Bwidth,Bheight);//iceFloor
+            blocks[16] = newsheet.crop(176,0,Bwidth,Bheight*2);//iceStone
+            blocks[17] = newsheet.crop(174,410,78,74);//icePillar
 
 
             //player anim
@@ -321,6 +324,69 @@ public class Images {
             SkelyOP_back[1] = OpSkely.crop(32, 96, width, height);
             SkelyOP_back[2] = OpSkely.crop(64, 96, width, height);
             SkelyOP_back[3] = OpSkely.crop(90, 96, width, height);
+            
+            //Boss
+            SkelyBoss_front[0] = BossSkely.crop(0, 0, width, height);
+            SkelyBoss_front[1] = BossSkely.crop(32, 0, width, height);
+            SkelyBoss_front[2] = BossSkely.crop(64, 0, width, height);
+            SkelyBoss_front[3] = BossSkely.crop(90, 0, width, height);
+            
+            SkelyBoss_left[0] = BossSkely.crop(0, 32, width, height);
+            SkelyBoss_left[1] = BossSkely.crop(32, 32, width, height);
+            SkelyBoss_left[2] = BossSkely.crop(64, 32, width, height);
+            SkelyBoss_left[3] = BossSkely.crop(90, 32, width, height);
+            
+            SkelyBoss_right[0] = BossSkely.crop(0, 64, width, height);
+            SkelyBoss_right[1] = BossSkely.crop(32, 64, width, height);
+            SkelyBoss_right[2] = BossSkely.crop(64, 64, width, height);
+            SkelyBoss_right[3] = BossSkely.crop(90, 64, width, height);
+            
+            SkelyBoss_back[0] = BossSkely.crop(0, 96, width, height);
+            SkelyBoss_back[1] = BossSkely.crop(32, 96, width, height);
+            SkelyBoss_back[2] = BossSkely.crop(64, 96, width, height);
+            SkelyBoss_back[3] = BossSkely.crop(90, 96, width, height);
+            
+            //Comp
+            Comp_front[0] = Comp.crop(0, 0, width, height);
+            Comp_front[1] = Comp.crop(32, 0, width, height);
+            Comp_front[2] = Comp.crop(64, 0, width, height);
+            Comp_front[3] = Comp.crop(90, 0, width, height);
+            
+            Comp_left[0] = Comp.crop(0, 32, width, height);
+            Comp_left[1] = Comp.crop(32, 32, width, height);
+            Comp_left[2] = Comp.crop(64, 32, width, height);
+            Comp_left[3] = Comp.crop(90, 32, width, height);
+            
+            Comp_right[0] = Comp.crop(0, 64, width, height);
+            Comp_right[1] = Comp.crop(32, 64, width, height);
+            Comp_right[2] = Comp.crop(64, 64, width, height);
+            Comp_right[3] = Comp.crop(90, 64, width, height);
+            
+            Comp_back[0] = Comp.crop(0, 96, width, height);
+            Comp_back[1] = Comp.crop(32, 96, width, height);
+            Comp_back[2] = Comp.crop(64, 96, width, height);
+            Comp_back[3] = Comp.crop(90, 96, width, height);
+            
+            //keeper
+            Keep_front[0] = Keeper.crop(0, 0, width, height);
+            Keep_front[1] = Keeper.crop(32, 0, width, height);
+            Keep_front[2] = Keeper.crop(64, 0, width, height);
+            Keep_front[3] = Keeper.crop(90, 0, width, height);
+            
+            Keep_left[0] = Keeper.crop(0, 32, width, height);
+            Keep_left[1] = Keeper.crop(32, 32, width, height);
+            Keep_left[2] = Keeper.crop(64, 32, width, height);
+            Keep_left[3] = Keeper.crop(90, 32, width, height);
+            
+            Keep_right[0] = Keeper.crop(0, 64, width, height);
+            Keep_right[1] = Keeper.crop(32, 64, width, height);
+            Keep_right[2] = Keeper.crop(64, 64, width, height);
+            Keep_right[3] = Keeper.crop(90, 64, width, height);
+            
+            Keep_back[0] = Keeper.crop(0, 96, width, height);
+            Keep_back[1] = Keeper.crop(32, 96, width, height);
+            Keep_back[2] = Keeper.crop(64, 96, width, height);
+            Keep_back[3] = Keeper.crop(90, 96, width, height);
             
             
 

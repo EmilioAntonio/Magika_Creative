@@ -1,5 +1,6 @@
 package Worlds;
 
+import Game.Entities.Creatures.Humanoid;
 import Game.Entities.Creatures.Player;
 import Game.Entities.Creatures.SkelyEnemy;
 import Game.Entities.Statics.CoinBlock;
@@ -22,6 +23,8 @@ public class World2 extends BaseWorld {
 			entityManager.addEntity(new SkelyEnemy(handler, 800 + 35*(i%40), 500 + 60*(i/15)));
 		}
 	
+			entityManager.addEntity(new Humanoid(handler, 100, 1000));
+			
 		 	entityManager.addEntity(new Tree(handler, 250, 250));
 	        entityManager.addEntity(new Rock(handler, 5000, 450));
 	        entityManager.addEntity(new Tree(handler, 700, 276));

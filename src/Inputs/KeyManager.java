@@ -14,6 +14,7 @@ public class KeyManager implements KeyListener {
 	public boolean hbutt = false;
 	public boolean addbutt = false;
 	public boolean telebutt = false;
+	public boolean interact = false;
 
 
 	public KeyManager(){
@@ -55,6 +56,7 @@ public class KeyManager implements KeyListener {
 		hbutt = keys[KeyEvent.VK_SHIFT];
 		addbutt = keys[KeyEvent.VK_X];
 		telebutt = keys[KeyEvent.VK_T];
+		interact = keys[KeyEvent.VK_Z];
 
 	}
 

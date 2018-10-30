@@ -47,6 +47,7 @@ public class Player extends CreatureBase {
     private int worldIn = 1;
     CaveWorld cave = new CaveWorld(handler, "res/Maps/caveMap.map",this);
     World1 start = new World1(handler, "res/Maps/map1.map",this);
+    World2 world2 = new World2(handler, "res/Maps/Map2.map", this);
 
     private int animWalkingSpeed = 150;
     private int animFireSpeed = 250;
@@ -56,7 +57,8 @@ public class Player extends CreatureBase {
     
     private final int MAX_HEALTH = 140;
 
-    //spells
+    public boolean interaction = false;
+    public int coinCount = 20;
 
 
 
@@ -112,6 +114,14 @@ public class Player extends CreatureBase {
         		worldIn++;
         		
         	}
+        	
+        	if(worldIn == 2){
+        		
+        		handler.setWorld(world2);
+        		worldIn++;
+        		
+        	}
+        	
         	else{
         		
         		handler.setWorld(start);
@@ -153,8 +163,11 @@ public class Player extends CreatureBase {
         }else if(handler.getKeyManager().fattbut){
 
             fireAttack();
-
-
+        }
+        
+        //Interact
+        if(handler.getKeyManager().interact){
+        	interaction = true;
         }
 
         //Inventory

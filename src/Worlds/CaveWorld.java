@@ -20,7 +20,7 @@ public class CaveWorld extends BaseWorld{
         this.handler = handler;
         this.player=player;
         
-        world2 = new World2(handler,"res/Maps/map2.map",player);
+        world2 = new World2(handler,"res/Maps/BossMap.map",player);
         
         entityManager.addEntity(new Door(handler, 800, 0, world2));
         entityManager.addEntity(new Rock(handler, 100, 450));

@@ -47,7 +47,7 @@ public class Player extends CreatureBase {
     private int worldIn = 1;
     CaveWorld cave = new CaveWorld(handler, "res/Maps/caveMap.map",this);
     World1 start = new World1(handler, "res/Maps/map1.map",this);
-    World2 world2 = new World2(handler, "res/Maps/Map2.map", this);
+    World2 world2 = new World2(handler, "res/Maps/BossMap.map", this);
 
 
     private int animWalkingSpeed = 150;

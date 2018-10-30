@@ -258,9 +258,9 @@ public class Images {
             blocks[12] = newsheet.crop(0,260,Bwidth,Bheight);//mossyrock
             blocks[13] = newsheet.crop(176,0,Bwidth,Bheight*2);//tree
             blocks[14] = newsheet.crop(174,410,78,74);//rock
-            blocks[15] = newsheet.crop(0,260,Bwidth,Bheight);//iceFloor
-            blocks[16] = newsheet.crop(176,0,Bwidth,Bheight*2);//iceStone
-            blocks[17] = newsheet.crop(174,410,78,74);//icePillar
+            blocks[15] = ImageIO.read(getClass().getResourceAsStream("/Blocks/iceFloor.png"));//iceFloor
+            blocks[16] = ImageIO.read(getClass().getResourceAsStream("/Blocks/iceStone.png"));//iceStone
+            blocks[17] = ImageIO.read(getClass().getResourceAsStream("/Blocks/icePillars.png"));//icePillar
 
 
             //player anim

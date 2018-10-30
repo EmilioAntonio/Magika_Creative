@@ -26,6 +26,12 @@ public class Tile {
     public static Tile rightwallTile = new BorderTile(Images.blocks[9],9);
     public static Tile topwallTile = new BorderTile(Images.blocks[10],10);
     public static Tile lowerwallTile = new BorderTile(Images.blocks[11],11);
+    
+    //new tiles
+    public static Tile iceTile = new IceTile(15);
+    public static Tile iceStoneTile = new IceStoneTile(Images.blocks[16], 16);
+    public static Tile icePillarTile = new IcePillar(Images.blocks[17], 17);
+    
 
     //CLASS
 

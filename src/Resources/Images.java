@@ -53,6 +53,10 @@ public class Images {
     public static BufferedImage fist;
     public static BufferedImage sword;
     
+    //New Companion
+    public static BufferedImage compR;
+    public static BufferedImage compL;
+    
     //New Enemies
     public static BufferedImage[] SkelyOP_right;
     public static BufferedImage[] SkelyOP_left;
@@ -141,6 +145,11 @@ public class Images {
             key = ImageIO.read(getClass().getResourceAsStream("/Sheets/key.png"));
             fist = ImageIO.read(getClass().getResourceAsStream("/Sheets/fist.png"));
             sword = ImageIO.read(getClass().getResourceAsStream("/Sheets/sword.png"));
+            
+            //Companion Images
+            compR = ImageIO.read(getClass().getResourceAsStream("/Sheets/Comp_R.png"));
+            
+            compL = ImageIO.read(getClass().getResourceAsStream("/Sheets/Comp_L.png"));
             
 
             //icon

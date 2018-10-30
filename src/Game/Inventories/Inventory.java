@@ -153,7 +153,6 @@ public class Inventory {
     	
     	if(remove)
     	{
-    		System.out.println("culo");
     		inventoryItems.remove(item);
     	}
     }

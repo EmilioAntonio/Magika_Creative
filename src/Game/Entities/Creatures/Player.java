@@ -47,6 +47,7 @@ public class Player extends CreatureBase {
     private int worldIn = 1;
     CaveWorld cave = new CaveWorld(handler, "res/Maps/caveMap.map",this);
     World1 start = new World1(handler, "res/Maps/map1.map",this);
+    World2 next = new World2(handler, "res/Maps/map2.map",this);
 
     private int animWalkingSpeed = 150;
     private int animFireSpeed = 250;
@@ -112,10 +113,16 @@ public class Player extends CreatureBase {
         		worldIn++;
         		
         	}
-        	else{
+        	else if(worldIn == 2){
         		
         		handler.setWorld(start);
-        		worldIn--;
+        		worldIn++;
+        		
+        	}
+        	else{
+        		
+        		handler.setWorld(next);
+        		worldIn-=2;
         		
         	}
 

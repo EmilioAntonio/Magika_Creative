@@ -32,7 +32,7 @@ public class World1 extends BaseWorld{
         
         
         
-        entityManager.addEntity(new CoinBlock(handler, 555, 1050));
+        entityManager.addEntity(new CoinBlockWF(handler, 555, 1050));
         
         entityManager.addEntity(new CoinBlock(handler, 1250, 600));
 

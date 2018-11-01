@@ -37,7 +37,7 @@ public class BossSkely extends CreatureBase  {
         bounds.width=16*2;
         bounds.height=14*2;
         speed=1.5f;
-        health=100;
+        health=110;
         attack = 6;
 
         SkelyCam= new Rectangle();

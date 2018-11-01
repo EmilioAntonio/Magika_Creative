@@ -19,6 +19,10 @@ public class World2 extends BaseWorld {
 		
 		entityManager.addEntity(new Heart(handler,800, 600));
 		
+		entityManager.addEntity(new Heart(handler,800, 400));
+		
+		entityManager.addEntity(new Heart(handler,400, 600));
+		
 	}
 
 }

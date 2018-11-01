@@ -1,10 +1,7 @@
 package Worlds;
 import Game.Entities.Creatures.Player;
 import Game.Entities.Creatures.*;
-import Game.Entities.Statics.CoinBlock;
-import Game.Entities.Statics.Door;
-import Game.Entities.Statics.Rock;
-import Game.Entities.Statics.Tree;
+import Game.Entities.Statics.*;
 import Main.Handler;
 
 /**
@@ -28,14 +25,14 @@ public class CaveWorld extends BaseWorld{
         entityManager.addEntity(new Rock(handler, 88, 1345));
         entityManager.addEntity(new Rock(handler, 700, 83));
         entityManager.addEntity(new OpSkely(handler, 1250, 500));
+        entityManager.addEntity(new SkelyEnemy(handler, 1250, 400));
+        entityManager.addEntity(new SkelyEnemy(handler, 1250, 300));
+        entityManager.addEntity(new SkelyEnemy(handler, 1150, 400));
+        entityManager.addEntity(new SkelyEnemy(handler,300, 1050));
+        entityManager.addEntity(new Heart(handler,700, 1050));
         entityManager.addEntity(new CoinBlock(handler, 555, 1050));
         entityManager.addEntity(new CoinBlock(handler, 1250, 600));
         
-        
-        for(int i=0; i<5; i++)
-        {
-        	entityManager.addEntity(new SkelyEnemy(handler, 800 + 35*(i%40), 500 + 60*(i/15)));
-        }
         
 
     }

@@ -1,5 +1,6 @@
 package Worlds;
 
+import Game.Entities.Creatures.Companion;
 import Game.Entities.Creatures.Player;
 import Game.Entities.EntityManager;
 import Game.GameStates.State;
@@ -22,6 +23,7 @@ public class BaseWorld {
     protected int countP = 0;
 
     protected EntityManager entityManager;
+    protected boolean companionUsed = false;
 
     //Item
     protected ItemManager itemManager;
@@ -36,6 +38,8 @@ public class BaseWorld {
         itemManager=new ItemManager(handler);
 
         loadWorld(path);
+        
+        
 
     }
 
@@ -52,6 +56,13 @@ public class BaseWorld {
             countP=0;
             State.setState(handler.getGame().pauseState);
         }
+        
+        if(handler.getWorld().getEntityManager().getPlayer().getSummonCompanion() && !companionUsed) {
+        	handler.getWorld().getEntityManager().addEntity(new Companion(handler, handler.getWorld().getEntityManager().getPlayer().getX() - 60, handler.getWorld().getEntityManager().getPlayer().getY()));
+        	companionUsed = true;
+        }
+
+        
     }
 
     public void render(Graphics g){
@@ -104,6 +115,10 @@ public class BaseWorld {
 
 
     }
+    
+    public void resetCompanionUsed() {
+    	companionUsed = false;
+}
 
     public int getWidth(){
         return width;

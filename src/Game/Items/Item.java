@@ -33,7 +33,8 @@ public class Item {
     public static Item coinItem = new Item(Images.coin, "Coin", 3);
     public static Item keyItem = new Item(Images.key,"Key", 4);
     public static Item fistItem = new Item(Images.fist,"Fist", 5);
-    public static Item sword = new Item(Images.sword,"Friendly Fighter", 5);
+    public static Item swordItem = new Item(Images.sword,"Companion", 6);
+    public static Item heartItem = new Item(Images.heart, "Heart", 7);
 
 
     //class

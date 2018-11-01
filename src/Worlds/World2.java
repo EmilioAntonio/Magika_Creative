@@ -2,10 +2,7 @@ package Worlds;
 
 
 import Game.Entities.Creatures.*;
-import Game.Entities.Statics.CoinBlock;
-import Game.Entities.Statics.Door;
-import Game.Entities.Statics.Rock;
-import Game.Entities.Statics.Tree;
+import Game.Entities.Statics.*;
 import Main.Handler;
 
 public class World2 extends BaseWorld {
@@ -19,6 +16,8 @@ public class World2 extends BaseWorld {
 		this.player = player;
 		
 		entityManager.addEntity(new BossSkely(handler, 800, 800));
+		
+		entityManager.addEntity(new Heart(handler,800, 600));
 		
 	}
 

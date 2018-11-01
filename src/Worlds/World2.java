@@ -1,9 +1,9 @@
 package Worlds;
 
-import Game.Entities.Creatures.Humanoid;
-import Game.Entities.Creatures.Player;
-import Game.Entities.Creatures.SkelyEnemy;
+
+import Game.Entities.Creatures.*;
 import Game.Entities.Statics.CoinBlock;
+import Game.Entities.Statics.Door;
 import Game.Entities.Statics.Rock;
 import Game.Entities.Statics.Tree;
 import Main.Handler;
@@ -18,10 +18,8 @@ public class World2 extends BaseWorld {
 		this.handler = handler;
 		this.player = player;
 		
+		entityManager.addEntity(new BossSkely(handler, 800, 800));
 		
-	
-			
-	        
 	}
 
 }

@@ -26,7 +26,7 @@ public class CoinBlockWF extends StaticEntity {
 		bounds.y=0;
 		bounds.width = 64;
 		bounds.height = 64;
-		health=4;
+		health=2;
 
 		try {
 			audioFile = new File("res/music/Pickaxe.wav");

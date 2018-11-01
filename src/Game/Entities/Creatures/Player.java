@@ -140,6 +140,23 @@ public class Player extends CreatureBase {
 			this.health = MAX_HEALTH;
 
 		}
+		
+		//Health back
+		for (Item i : getInventory().getInventoryItems()) {
+			if (i.getName() == "Heart") {
+				
+				health += 25;
+				
+				i.setCount(i.getCount() - 1);
+			}
+		}
+		
+		//Max Health
+		for (Item i : getInventory().getInventoryItems()) {
+			if (i.getName() == "Fist") {
+				attack = 4;
+			}
+		}
 
 		if(!fcactive){
 			fcounter++;
@@ -197,6 +214,7 @@ public class Player extends CreatureBase {
 			handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(Item.keyItem);
 			handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(Item.coinItem);
 			handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(Item.fistItem);
+			handler.getWorld().getEntityManager().getPlayer().getInventory().addItem(Item.swordItem);
 
 
 		}

@@ -72,7 +72,7 @@ public class Player extends CreatureBase {
         bounds.width=16*2;
         bounds.height=14*2;
         health=MAX_HEALTH;
-        attack=4;
+        attack=2;
         
         animDown = new Animation(animWalkingSpeed,Images.player_front);
         animLeft = new Animation(animWalkingSpeed,Images.player_left);
@@ -166,6 +166,13 @@ public class Player extends CreatureBase {
             fireAttack();
         }
         
+        //For Increased attack
+        for (Item i : getInventory().getInventoryItems()) {
+            if (i.getName() == "Fist") {
+                attack = 4;
+            }
+        }
+        
         //Interact
         if(handler.getKeyManager().interact){
         	interaction = true;
@@ -186,16 +193,7 @@ public class Player extends CreatureBase {
         	
         }
         
-        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_E))
-        {
-        	if(handler.getWorld().getEntityManager().getPlayer().getInventory().containsItem(Item.fistItem))
-        	{
-        		this.attack+=2;
-        		handler.getWorld().getEntityManager().getPlayer().getInventory().removeItem(Item.fistItem);
-        		
-        		System.out.println(attack);
-        	}
-        }
+      
        
        
         //spellgui

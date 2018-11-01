@@ -11,7 +11,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Random;
 
-public class CoinBlock extends StaticEntity {
+public class CoinBlockWF extends StaticEntity {
 
 	private File audioFile;
 	private AudioInputStream audioStream;
@@ -19,7 +19,7 @@ public class CoinBlock extends StaticEntity {
 	private DataLine.Info info;
 	private Clip audioClip;
 
-	public CoinBlock(Handler handler, float x, float y) {
+	public CoinBlockWF(Handler handler, float x, float y) {
 		super(handler, x, y, Tile.TILEWIDTH, Tile.TILEHEIGHT);
 
 		bounds.x=0;
@@ -74,6 +74,8 @@ public class CoinBlock extends StaticEntity {
 	public void die() {
 
 		handler.getWorld().getItemManager().addItem(Item.coinItem.createNew((int)x + bounds.x,(int)y + bounds.y,1));
+
+		handler.getWorld().getItemManager().addItem(Item.fistItem.createNew((int)x + bounds.x,(int)y + bounds.y,1));
 
 	}
 }

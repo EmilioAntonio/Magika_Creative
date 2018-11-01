@@ -51,10 +51,10 @@ public class Humanoid extends CreatureBase{
 //	        animRight = new Animation(animWalkingSpeed,Images.humanoid_right);
 //	        animUp = new Animation(animWalkingSpeed,Images.humanoid_back);
 	        
-	        animDown = new Animation(animWalkingSpeed, Images.SkelyEnemy_front);
-	        animLeft = new Animation(animWalkingSpeed,Images.SkelyEnemy_left);
-	        animRight = new Animation(animWalkingSpeed,Images.SkelyEnemy_right);
-	        animUp = new Animation(animWalkingSpeed,Images.SkelyEnemy_back);
+	        animDown = new Animation(animWalkingSpeed, Images.Keep_front);
+	        animLeft = new Animation(animWalkingSpeed,Images.Keep_left);
+	        animRight = new Animation(animWalkingSpeed,Images.Keep_right);
+	        animUp = new Animation(animWalkingSpeed,Images.Keep_back);
 
 	        humanoidInventory = new Inventory(handler);
 	    }
@@ -184,7 +184,7 @@ public class Humanoid extends CreatureBase{
 
 	    @Override
 	    public void render(Graphics g) {
-	        g.drawImage(getCurrentAnimationFrame(animDown,animUp,animLeft,animRight,Images.SkelyEnemy_right,Images.SkelyEnemy_back,Images.SkelyEnemy_left,Images.SkelyEnemy_right), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), width, height, null);
+	        g.drawImage(getCurrentAnimationFrame(animDown,animUp,animLeft,animRight,Images.Keep_right,Images.Keep_back,Images.Keep_left,Images.Keep_front), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), width, height, null);
 	        if(isBeinghurt() && healthcounter<=120){
 	            g.setColor(Color.white);
 	            g.drawString("Humanoid: " + getHealth(),(int) (x-handler.getGameCamera().getxOffset()),(int) (y-handler.getGameCamera().getyOffset()-20));
@@ -202,13 +202,7 @@ public class Humanoid extends CreatureBase{
 
 	    @Override
 	    public void die() {
-	    	handler.getWorld().getItemManager().addItem(Item.keyItem.createNew((int)x + bounds.x,(int)y + bounds.y,1));
-	    	int n=30;
-	    	for(int i=0; i<5; i++)
-	    	{
-	    		handler.getWorld().getItemManager().addItem(Item.coinItem.createNew((int)x + bounds.x + n,(int)y + bounds.y,1));
-	    		n+=30;
-	    	}
+	    	
 	    }
 
 	

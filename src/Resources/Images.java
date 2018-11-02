@@ -54,6 +54,8 @@ public class Images {
     public static BufferedImage sword;
     public static BufferedImage heart;
     public static BufferedImage halo;
+    public static BufferedImage victory;
+    public static BufferedImage[] exit;
     
     //New Companion
     public static BufferedImage[] Comp_right;
@@ -139,6 +141,8 @@ public class Images {
         FireBallRight = new BufferedImage[6];
         FireBallUp = new BufferedImage[6];
         FireBallDown = new BufferedImage[6];
+        
+        exit = new BufferedImage[1];
 
 
 
@@ -167,6 +171,8 @@ public class Images {
             sword = ImageIO.read(getClass().getResourceAsStream("/Sheets/sword.png"));
             heart = ImageIO.read(getClass().getResourceAsStream("/Sheets/heart.png"));
             halo = ImageIO.read(getClass().getResourceAsStream("/Sheets/MaxHealth.png"));
+            victory = ImageIO.read(getClass().getResourceAsStream("/Sheets/Victory.png"));
+            exit[0] = ImageIO.read(getClass().getResourceAsStream("/Sheets/Exit.png"));
 
             //icon
             icon = new ImageIcon(runesheet.crop(Rwidth*1,Rheight*0,Rwidth,Rheight));

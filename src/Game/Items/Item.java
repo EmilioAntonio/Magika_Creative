@@ -35,6 +35,7 @@ public class Item {
     public static Item fistItem = new Item(Images.fist,"Fist", 5);
     public static Item swordItem = new Item(Images.sword,"Companion", 6);
     public static Item heartItem = new Item(Images.heart, "Heart", 7);
+    public static Item haloItem = new Item(Images.halo, "Halo", 8);
 
 
     //class

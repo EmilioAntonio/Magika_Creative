@@ -53,6 +53,7 @@ public class Images {
     public static BufferedImage fist;
     public static BufferedImage sword;
     public static BufferedImage heart;
+    public static BufferedImage halo;
     
     //New Companion
     public static BufferedImage[] Comp_right;
@@ -165,6 +166,7 @@ public class Images {
             fist = ImageIO.read(getClass().getResourceAsStream("/Sheets/fist.png"));
             sword = ImageIO.read(getClass().getResourceAsStream("/Sheets/sword.png"));
             heart = ImageIO.read(getClass().getResourceAsStream("/Sheets/heart.png"));
+            halo = ImageIO.read(getClass().getResourceAsStream("/Sheets/MaxHealth.png"));
 
             //icon
             icon = new ImageIcon(runesheet.crop(Rwidth*1,Rheight*0,Rwidth,Rheight));

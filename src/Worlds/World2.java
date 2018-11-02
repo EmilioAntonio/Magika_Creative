@@ -23,6 +23,8 @@ public class World2 extends BaseWorld {
 		
 		entityManager.addEntity(new Heart(handler,400, 600));
 		
+		entityManager.addEntity(new Halo(handler, 770, 1100));
+		
 	}
 
 }

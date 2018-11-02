@@ -30,7 +30,7 @@ public class World1 extends BaseWorld{
        entityManager.addEntity(new Door(handler, 100, 0,caveWorld));
         entityManager.addEntity(new SkelyEnemy(handler, 1250, 500));
         
-        
+        entityManager.addEntity(new Heart(handler,800, 800));
         
         entityManager.addEntity(new CoinBlockWF(handler, 555, 1050));
         

@@ -7,18 +7,19 @@ import java.util.Random;
 
 import Game.Entities.EntityBase;
 import Game.Entities.Statics.Door;
+import Game.Entities.Statics.Door2;
 import Game.Inventories.Inventory;
 import Game.Items.Item;
 import Main.Handler;
 import Resources.Animation;
 import Resources.Images;
 
-public class Humanoid extends CreatureBase{
+public class Humanoid2 extends CreatureBase{
 	
 	 	private Animation animDown, animUp, animLeft, animRight;
 
 	    private Boolean attacking=false;
-	    private Boolean doorQ = false;
+	    
 
 	    private int animWalkingSpeed = 150;
 	    private Inventory humanoidInventory;
@@ -32,7 +33,7 @@ public class Humanoid extends CreatureBase{
 	    private int coinCount = 3;
 	    private int keyCount = 1;
 
-	    public Humanoid(Handler handler, float x, float y) {
+	    public Humanoid2(Handler handler, float x, float y) {
 	        super(handler, x, y, CreatureBase.DEFAULT_CREATURE_WIDTH, CreatureBase.DEFAULT_CREATURE_HEIGHT);
 	        bounds.x=8*2;
 	        bounds.y=18*2;
@@ -88,7 +89,7 @@ public class Humanoid extends CreatureBase{
 	        
 	        if(keyCount == 0 && coinCount==0){
 	        	
-	        	Door.doorQ = true;
+	        	Door2.doorA = true;
 	        	
 	        }
 

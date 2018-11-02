@@ -21,7 +21,7 @@ public class Heart extends StaticEntity {
 		bounds.y=0;
 		bounds.width = 64;
 		bounds.height = 64;
-		health=2;
+		health=4;
 
 		
 

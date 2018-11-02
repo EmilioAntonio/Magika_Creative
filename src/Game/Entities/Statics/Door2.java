@@ -13,15 +13,15 @@ import java.awt.*;
  */
 
 
-public class Door extends StaticEntity {
+public class Door2 extends StaticEntity {
 
     private Rectangle ir = new Rectangle();
     public Boolean EP = false;
-	public static Boolean doorQ = false;
+	public static Boolean doorA = false;
 
     private BaseWorld world;
 
-    public Door(Handler handler, float x, float y,BaseWorld world) {
+    public Door2(Handler handler, float x, float y,BaseWorld world) {
         super(handler, x, y, 64, 100);
         this.world=world;
         health=10000000;
@@ -56,7 +56,7 @@ public class Door extends StaticEntity {
 
     @Override
     public void render(Graphics g) {
-    	if(doorQ){
+    	if(doorA){
         g.drawImage(Images.door,(int)(x-handler.getGameCamera().getxOffset()),(int)(y-handler.getGameCamera().getyOffset()),width,height,null);
         g.setColor(Color.black);
         checkForPlayer(g, handler.getWorld().getEntityManager().getPlayer());

@@ -1,5 +1,4 @@
 package Worlds;
-import Game.Entities.Creatures.Player;
 import Game.Entities.Creatures.*;
 import Game.Entities.Statics.*;
 import Main.Handler;
@@ -19,7 +18,8 @@ public class CaveWorld extends BaseWorld{
         
         world2 = new World2(handler,"res/Maps/BossMap.map",player);
         
-        entityManager.addEntity(new Door(handler, 800, 0, world2));
+        entityManager.addEntity(new Humanoid2(handler, 250, 250));
+        entityManager.addEntity(new Door2(handler, 800, 0, world2));
         entityManager.addEntity(new Rock(handler, 100, 450));
         entityManager.addEntity(new Rock(handler, 684, 1370));
         entityManager.addEntity(new Rock(handler, 88, 1345));
@@ -32,6 +32,7 @@ public class CaveWorld extends BaseWorld{
         entityManager.addEntity(new Heart(handler,700, 1050));
         entityManager.addEntity(new CoinBlock(handler, 555, 1050));
         entityManager.addEntity(new CoinBlock(handler, 1250, 600));
+        entityManager.addEntity(new Heart(handler,800, 800));
         
         
 

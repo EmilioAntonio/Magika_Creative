@@ -153,8 +153,11 @@ public class Player extends CreatureBase {
 		
 		//Max Health
 		for (Item i : getInventory().getInventoryItems()) {
-			if (i.getName() == "Fist") {
-				attack = 4;
+			if (i.getName() == "Halo") {
+				
+				health = MAX_HEALTH + 25;
+				
+				i.setCount(i.getCount() - 1);
 			}
 		}
 
@@ -199,7 +202,7 @@ public class Player extends CreatureBase {
 
 
 		//Interact
-		if(handler.getKeyManager().interact){
+		if(handler.getKeyManager().attbut){
 			interaction = true;
 		}
 
